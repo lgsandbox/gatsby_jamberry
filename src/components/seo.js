@@ -69,7 +69,13 @@ function Seo({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+
+          <meta charSet="utf-8" />
+          <title>bigGrow Web Solutions, Development, and Design</title>
+          <link rel="canonical" href="https://gatsbyjs-animejs-styledcomponents-starter.netlify.app/" />
+
+    </Helmet>
   )
 }
 
