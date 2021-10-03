@@ -10,7 +10,7 @@ const IndexPage = () => (
   
 
       <Layout >
-        <Seo title="Home" />
+        <Seo title="Biggrow Web Solutions" />
       </Layout>
 
 )

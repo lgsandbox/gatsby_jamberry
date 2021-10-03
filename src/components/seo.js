@@ -31,7 +31,7 @@ function Seo({ description, lang, meta, title }) {
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang : this.state.lang
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
@@ -70,7 +70,7 @@ function Seo({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     >
-
+          
           <meta charSet="utf-8" />
           <title>bigGrow Web Solutions, Development, and Design</title>
           <link rel="canonical" href="https://gatsbyjs-animejs-styledcomponents-starter.netlify.app/" />
