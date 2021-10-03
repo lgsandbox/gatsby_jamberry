@@ -4,7 +4,7 @@ import anime from 'animejs/lib/anime.es.js';
 export const onClientEntry = () => {
     window.onload = () => { 
         
-        console.log("loading SPA...");
+        console.log("loading app...");
 
         anime({
             targets: 'body',
@@ -15,7 +15,7 @@ export const onClientEntry = () => {
             easing: 'linear',
           })
     
-        
+        console.log("animations are up...")
     }
   }
 
