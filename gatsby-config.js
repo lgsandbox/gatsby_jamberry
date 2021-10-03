@@ -22,15 +22,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Biggrow Web Solutions`,
+        short_name: `Biggrow`,
         start_url: `/`,
         background_color: `#663399`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/biggrow-main.png`, // This path is relative to the root of the site.
+        icon: `src/images/weblogo2.png`, // This path is relative to the root of the site.
+        crossOrigin: `use-credentials`,
+      
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
