@@ -4,7 +4,7 @@ import { ContainerFooter } from "./styles/Container.styled"
 import { Flex } from "./styles/Flex.styled"
 import { StyledFooter } from './styles/Footer.styled'
 import Logo from "../images/weblogo2.png"
-import SocialIcons from "./socialicons"
+
 
 export default function Footer() {
     return (
@@ -32,7 +32,7 @@ export default function Footer() {
               <li>Contact Us</li>
             </ul>
   
-            <SocialIcons />
+  
           </Flex>
   
           <p>&copy; 2021 bigGrow. All rights reserved</p>
