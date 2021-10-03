@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `bigGrow Web`,
+    title: `bigGrow Web Design & Development`,
     description: `Web solutions with consistent and continuous development, built to scale with you as your business grows!`,
     author: `bigGrow Labs`,
     siteUrl: `https://biggrow-productionbuild.netlify.app`,
@@ -9,6 +9,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

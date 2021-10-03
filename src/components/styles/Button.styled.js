@@ -11,10 +11,21 @@ export const Button = styled.button`
     padding: 13px 30px;
     background-color: ${({ theme }) => theme.colors.buttonbg};
     color: ${({ theme }) => theme.colors.buttoncolor};
+    margin-bottom: 20px;
+
 
     &:hover {
         opacity: 0.9;
         transform: scale(0.98);
     }
+
+`
+
+export const SecondButton = styled(Button)`
+
+    color: ${({ theme }) => theme.colors.buttonbg};
+    background-color: ${({ theme }) => theme.colors.buttoncolor};
+    margin-top: 20px;
+    margin-bottom: 25px;
 
 `
