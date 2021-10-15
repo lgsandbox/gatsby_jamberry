@@ -10,12 +10,12 @@ export const onClientEntry = () => {
             targets: 'body',
             opacity: 1,
 
-            duration: 2000,
+            duration: 3000,
     
             easing: 'linear',
           })
     
-        console.log("animations are up...")
+        console.log("loading animations are up...")
     }
   }
 

@@ -12,6 +12,10 @@ export const Button = styled.button`
     background-color: ${({ theme }) => theme.colors.buttonbg};
     color: ${({ theme }) => theme.colors.buttoncolor};
     margin-bottom: 20px;
+    margin-top: 30px;
+    opacity: 0;
+    position: relative;
+    left:50px;
 
 
     &:hover {
@@ -27,5 +31,7 @@ export const SecondButton = styled(Button)`
     background-color: ${({ theme }) => theme.colors.buttoncolor};
     margin-top: 20px;
     margin-bottom: 25px;
+    opacity: 1;
+    left: 0px;
 
 `

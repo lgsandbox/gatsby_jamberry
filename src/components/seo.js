@@ -30,7 +30,7 @@ function Seo({ description, lang, meta, title }) {
 
   return (
     <Helmet
-      title={title}
+      title={defaultTitle}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {

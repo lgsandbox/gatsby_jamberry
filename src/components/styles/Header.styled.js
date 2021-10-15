@@ -9,6 +9,7 @@ export const StyledHeader = styled.header`
     padding: 30px 0;
 
 
+
     
     @media(max-width: ${({theme}) => theme.mobile}) {
         padding: 0px 0;

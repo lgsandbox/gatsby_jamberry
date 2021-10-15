@@ -6,15 +6,17 @@ export const Container = styled.div`
     max-width: 100%;
     padding: 0 20px;
     margin: 0 auto;
-    color: black;
+    color: #1c0400;
+
   
 
 `
 
 export const HeaderImageContainer = styled.div`
 
-        
+    position: relative;        
     margin-left: 150px;
+    left: 50px;
     
 
 
@@ -30,4 +32,9 @@ export const ContainerFooter = styled.div`
     padding: 0 20px;
     margin: 0 auto;
     color: white;
+`
+
+export const AnimatedArrow = styled.span`
+
+
 `

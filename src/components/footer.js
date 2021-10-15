@@ -3,7 +3,7 @@ import * as React from "react"
 import { ContainerFooter } from "./styles/Container.styled"
 import { Flex } from "./styles/Flex.styled"
 import { StyledFooter } from './styles/Footer.styled'
-import Logo from "../images/weblogo2.png"
+import Logo from "../images/bigsvgtest.svg"
 
 
 export default function Footer() {
