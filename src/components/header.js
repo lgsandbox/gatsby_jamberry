@@ -36,10 +36,10 @@ const Header = ({ siteTitle }) => {
 
         easing: 'easeInOutSine',
         opacity: 1,
-        duration: 2000
+        duration: 1900
 
       });
-    }, 1000);
+    }, 400);
 
     setTimeout(() => {
       anime({
@@ -51,10 +51,10 @@ const Header = ({ siteTitle }) => {
         },
         easing: 'easeInOutSine',
         opacity: 1,
-        duration: 2000
+        duration: 1900
 
       });
-    }, 1000);
+    }, 400);
 
     setTimeout(() => {
       anime({
@@ -66,10 +66,10 @@ const Header = ({ siteTitle }) => {
         },
         easing: 'easeInOutSine',
         opacity: 1,
-        duration: 2000
+        duration: 1900
 
       });
-    }, 1000);
+    }, 400);
 
     setTimeout(() => {
       anime({
@@ -81,10 +81,10 @@ const Header = ({ siteTitle }) => {
         },
         easing: 'easeInOutSine',
         opacity: 1,
-        duration: 1800
+        duration: 1500
 
       });
-    }, 500);
+    }, 200);
 
   },[]);
   
