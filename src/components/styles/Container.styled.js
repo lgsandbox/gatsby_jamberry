@@ -35,7 +35,20 @@ export const ContainerFooter = styled.div`
     color: white;
 `
 
-export const AnimatedArrow = styled.span`
+export const ArrowContainer = styled.div`
+
+    display: flex;
+  
+    justify-content:center;
+    color: black;
+    opacity: 0;
+    padding-top:32px;
+
+    div {
+        margin:5px;
+
+    }
+
 
 
 `

@@ -25,7 +25,7 @@ const Header = ({ siteTitle }) => {
 // can move to animation component and make into container
 
   useEffect(() => {
-    setTimeout(() => {
+    let first = setTimeout(() => {
       anime({
         targets: '#fadeRight',
         translateX: {
@@ -41,7 +41,7 @@ const Header = ({ siteTitle }) => {
       });
     }, 400);
 
-    setTimeout(() => {
+    let second = setTimeout(() => {
       anime({
         targets: '#navButton',
         translateX: {
@@ -56,7 +56,7 @@ const Header = ({ siteTitle }) => {
       });
     }, 400);
 
-    setTimeout(() => {
+    let third = setTimeout(() => {
       anime({
         targets: '#headerImage',
         translateX: {
@@ -71,7 +71,7 @@ const Header = ({ siteTitle }) => {
       });
     }, 400);
 
-    setTimeout(() => {
+    let fourth = setTimeout(() => {
       anime({
         targets: '#logo',
         translateX: {
@@ -86,10 +86,19 @@ const Header = ({ siteTitle }) => {
       });
     }, 200);
 
+    setTimeout(() => {
+      anime({
+        targets: '#theme',
+        backgroundColor: 'black',
+      });
+    }, 2000);
+
+
+    return () => clearTimeout(first, second, third, fourth)
   },[]);
   
   return(
-    <StyledHeader>
+    <StyledHeader id="theme">
       <header>
         
         <Container>

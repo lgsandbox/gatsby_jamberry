@@ -8,9 +8,10 @@ import Seo from "../components/seo"
 
 class IndexPage extends React.Component {
 
+  
 
   render() {
-    console.log("rendering index...");
+    console.log("rendering...");
     return(
 
 

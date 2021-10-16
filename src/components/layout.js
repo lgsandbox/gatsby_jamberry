@@ -5,9 +5,12 @@ import Header from "./header"
 import Footer from "./footer"
 import Card from "./card"
 import { ThemeProvider } from 'styled-components'
-import { Container } from '../components/styles/Container.styled'
+import { Container, ArrowContainer } from '../components/styles/Container.styled'
 import content from "./content"
+import { StaticImage } from "gatsby-plugin-image"
+
 import anime from 'animejs/lib/anime.es.js';
+
 
 
 
@@ -18,13 +21,13 @@ const theme = {
     footer: '#003333',
     buttonbg: '#fff',
     buttoncolor: '#333',
-  },
+    },
   spacing: {
     margin: '10px',
     width: '80%',
-  },
+    },
   mobile: '768px',
-}
+  }
 
 
 
@@ -44,25 +47,49 @@ const data = useStaticQuery(graphql`
     }
   `)
 
+
   useEffect(() => {
+
+
     setTimeout(() => {
       anime({
-        targets: '#slideRight',
-        translateX: 250,
-        duration: 3000
-      });
-    }, 1000);
-  })
-  
-  
+        targets: '#point',
+        direction: 'alternate',
+        scale: 1,
+        translateY: 15,
+        opacity:1,
+        duration: 2500,
+        loop: true,
+        easing: 'easeInOutSine',
 
-  return (
+      });
+    }, 2000);
+
+
+    }
+)
+  
+return (
  
     <React.Fragment>
       
       <ThemeProvider theme = {theme}>
 
-          <Header siteTitle={data.site.siteMetadata.title} />
+          <Header id="header" siteTitle={data.site.siteMetadata.title} />
+            
+    
+            <ArrowContainer id="point">
+                 <div> 
+                <StaticImage 
+              src="../images/arrow2.svg"
+              alt="scroll to view arrow!" 
+              id="arrow" 
+              placeholder="blurred"
+              loading="eager"
+              width={26}
+              height={26} /> 
+                </div>
+            </ArrowContainer>
 
             <div>
             <main>{children}</main>
@@ -72,6 +99,7 @@ const data = useStaticQuery(graphql`
                 ))}
 
               </Container>
+
               <Footer></Footer>
             </div>
       </ThemeProvider>
