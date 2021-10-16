@@ -17,6 +17,7 @@ export const HeaderImageContainer = styled.div`
     position: relative;        
     margin-left: 150px;
     left: 50px;
+    opacity:0;
     
 
 

@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { Container, HeaderImageContainer } from '../components/styles/Container.styled'
-import { StyledHeader, Nav } from '../components/styles/Header.styled'
+import { StyledHeader, Nav, Logo } from '../components/styles/Header.styled'
 import { StaticImage } from "gatsby-plugin-image"
 import { Button, SecondButton } from './styles/Button.styled'
 import { Flex } from '../components/styles/Flex.styled'
 import Modal from './modal.js'
 import anime from 'animejs/lib/anime.es.js';
 import { Fade } from '../components/styles/Fade.styled'
+import Inspire from "../images/inspire.svg"
 
 
 
@@ -59,7 +60,7 @@ const Header = ({ siteTitle }) => {
       anime({
         targets: '#headerImage',
         translateX: {
-          value: -50,
+          value: -25,
           direction: 'normal',
         
         },
@@ -73,12 +74,17 @@ const Header = ({ siteTitle }) => {
     setTimeout(() => {
       anime({
         targets: '#logo',
+        translateX: {
+          value: 50,
+          direction: 'normal',
+        
+        },
         easing: 'easeInOutSine',
         opacity: 1,
-        duration: 2000
+        duration: 1800
 
       });
-    }, 1000);
+    }, 500);
 
   },[]);
   
@@ -88,12 +94,14 @@ const Header = ({ siteTitle }) => {
         
         <Container>
           <Nav >
-            
+          <Logo id="logo">
           <StaticImage 
             src="../images/bigsvgtest.svg"
             alt="logo image" 
-            id="logo"
+    
+
             />
+            </Logo>
           <Link to="/quote">
           <Button id="navButton">
             Get Quote  → </Button> </Link>
@@ -115,9 +123,10 @@ const Header = ({ siteTitle }) => {
             
             </Fade>
             <HeaderImageContainer id="headerImage">
-            <StaticImage 
-            src="../images/inspire.svg"
-            alt="header image" /> 
+            <img 
+            src={Inspire}
+            alt="inspire design" 
+            id="headerImage"  /> 
             </HeaderImageContainer>
           </Flex>
         </Container>

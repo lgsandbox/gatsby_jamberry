@@ -32,3 +32,11 @@ export const Nav = styled.nav`
     
 `
 
+export const Logo = styled.div`
+
+    position: relative;
+    right: 50px;
+    opacity: 0;
+
+`
+
