@@ -19,3 +19,7 @@ p {
 img {
   max-width: 100%;
 }
+
+#polygon {
+  opacity: 0;
+}

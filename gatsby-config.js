@@ -1,11 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: `bigGrow Web Design & Development`,
-    description: `Web solutions with consistent and continuous development, built to scale with you as your business grows!`,
-    author: `bigGrow Labs`,
-    siteUrl: `https://biggrow-productionbuild.netlify.app`,
+    title: `PolyPaint Labs`,
+    description: `Web Design, Development, and Search Engine Optimization SEO`,
+    author: `lpg`,
+    siteUrl: `https://gatsbyjs-animejs-styledcomponents-starter.netlify.app`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/ 
+        }
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,
@@ -30,7 +38,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/bigsvgtest.svg`, // This path is relative to the root of the site.
+        icon: `src/components/svg/assets/bigdaologo.svg`, // This path is relative to the root of the site.
         crossOrigin: `use-credentials`,
       
       },

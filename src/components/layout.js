@@ -1,22 +1,26 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+// import { StaticImage } from "gatsby-plugin-image"
+
+// styles:
+import { ThemeProvider } from 'styled-components'
+import { Container } from '../components/styles/Container.styled'
+
+// layout:
 import Header from "./header"
 import Footer from "./footer"
 import Card from "./card"
-import { ThemeProvider } from 'styled-components'
-import { Container, ArrowContainer } from '../components/styles/Container.styled'
 import content from "./content"
-import { StaticImage } from "gatsby-plugin-image"
 
+// layout animation:
 import anime from 'animejs/lib/anime.es.js';
 
 
-
-
+// props
 const theme = {
   colors: {
-    header:'#f2fff2',
+    header:'#f5fcfc',
     body: '#fff',
     footer: '#003333',
     buttonbg: '#fff',
@@ -27,88 +31,89 @@ const theme = {
     width: '80%',
     },
   mobile: '768px',
-  }
+}
 
 
 
 const Layout = ({ children }) => {
 
-  
+// graphql metadata schema   
 const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-          description
-          author
-          siteUrl
-        }
-      }
-    }
-  `)
 
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+            description
+            author
+            siteUrl
+          }}}
 
-  useEffect(() => {
+`)
 
+// state setting y position
+const [scrollPosition, setScrollPosition] = useState(0);
 
-    setTimeout(() => {
-      anime({
-        targets: '#point',
-        direction: 'alternate',
-        scale: 1,
-        translateY: 15,
-        opacity:1,
-        duration: 2500,
-        loop: true,
-        easing: 'easeInOutSine',
-
-      });
-    }, 2000);
-
-
-    }
-)
-  
-return (
+const handleScroll = () => { const position = window.pageYOffset; setScrollPosition(position); };
  
-    <React.Fragment>
-      
+// move to function component
+
+
+
+
+useEffect(() => { window.addEventListener('scroll', handleScroll, { passive: true });
+
+return () => { window.removeEventListener('scroll', handleScroll);};}, []);
+
+console.log(scrollPosition);
+
+
+//jsx media size check, for animation and logic
+if(window.screen.availWidth >= 768){ console.log("it desktop");} 
+else { console.log("it phone"); }
+
+
+useEffect(() => { if(scrollPosition >= 80 & window.screen.availWidth >= 768) {
+  
+              anime({
+                
+                targets: '#reveal',
+                opacity:1,
+                duration: 500,
+                easing: 'linear',
+
+              });
+
+            }}, []);
+
+// layout animations
+
+
+
+return (
+
+    <React.Fragment>   
       <ThemeProvider theme = {theme}>
-
           <Header id="header" siteTitle={data.site.siteMetadata.title} />
-            
-    
-            <ArrowContainer id="point">
-                 <div> 
-                <StaticImage 
-              src="../images/arrow2.svg"
-              alt="scroll to view arrow!" 
-              id="arrow" 
-              placeholder="blurred"
-              loading="eager"
-              width={26}
-              height={26} /> 
-                </div>
-            </ArrowContainer>
-
             <div>
-            <main>{children}</main>
-              <Container>
-                {content.map((item, index) =>(
-                 <Card key={index} item={item}/>
-                ))}
-
-              </Container>
-
-              <Footer></Footer>
+              <main>{children}</main>
+                <Container>
+                  {content.map((item, index) =>(
+                  <Card key={index} item={item}/>
+                  ))}
+                </Container>
+                <Container>
+               
+                  <Card/>
+            
+                </Container>
+              <Footer/>
             </div>
       </ThemeProvider>
     </React.Fragment>
-  )
-}
+ 
+ )}
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+Layout.propTypes = { children: PropTypes.node.isRequired, }
 
 export default Layout

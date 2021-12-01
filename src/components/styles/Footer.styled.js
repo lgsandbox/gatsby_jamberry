@@ -4,7 +4,7 @@ export const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.colors.footer};
   color: ${({ theme }) => theme.colors.body};
   padding: 0 60px;
-  opacity: 0;
+  opacity: 1;
   ul {
     list-style-type: none;
   }
